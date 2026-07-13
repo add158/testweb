@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>我的网页</title>
+  <title>王林 - Lamborghini Veneno</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌐</text></svg>">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -14,78 +14,75 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      color: #e2e8f0;
+      background: #0a0a0a;
+      color: #ffffff;
       padding: 2rem;
     }
-    .card {
-      background: rgba(30, 41, 59, 0.8);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(148, 163, 184, 0.15);
-      border-radius: 16px;
-      padding: 3rem 4rem;
-      max-width: 520px;
-      width: 100%;
-      text-align: center;
-      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
-    }
-    h1 {
-      font-size: 2.25rem;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-      background: linear-gradient(to right, #60a5fa, #a78bfa);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    p {
-      font-size: 1rem;
-      line-height: 1.7;
-      color: #94a3b8;
-      margin-bottom: 2rem;
-    }
-    .status {
-      display: inline-flex;
+    .container {
+      display: flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.5rem 1.25rem;
-      background: rgba(34, 197, 94, 0.15);
-      border: 1px solid rgba(34, 197, 94, 0.3);
-      border-radius: 999px;
-      color: #4ade80;
-      font-size: 0.875rem;
-      font-weight: 500;
+      justify-content: center;
+      gap: 4rem;
+      max-width: 1100px;
+      width: 100%;
+      padding: 2rem;
+      flex-wrap: wrap;
     }
-    .status::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #22c55e;
-      animation: pulse 2s ease-in-out infinite;
+    .car-image {
+      flex: 1 1 500px;
+      max-width: 600px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(255, 200, 0, 0.08);
     }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
+    .car-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .name-section {
+      flex: 0 0 auto;
+      text-align: left;
+    }
+    .name-section h1 {
+      font-size: 5rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      color: #f5c518;
+      text-shadow: 0 0 40px rgba(245, 197, 24, 0.2);
+      line-height: 1;
+    }
+    .name-section .sub {
+      font-size: 1.1rem;
+      color: #888;
+      margin-top: 0.5rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
     }
     .meta {
-      margin-top: 2rem;
-      font-size: 0.8rem;
-      color: #475569;
+      margin-top: 3rem;
+      font-size: 0.75rem;
+      color: #444;
+      text-align: center;
     }
-    a {
-      color: #60a5fa;
-      text-decoration: none;
+    @media (max-width: 768px) {
+      .container { gap: 2rem; flex-direction: column; text-align: center; }
+      .name-section { text-align: center; }
+      .name-section h1 { font-size: 3rem; }
+      .car-image { flex: 1 1 100%; }
     }
-    a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>Hello, World!</h1>
-    <p>这是一个全新的网页，放在 <code>F:\testweb</code> 中，可以自由编辑和扩展。</p>
-    <div class="status">已就绪 · 等待发布</div>
-    <div class="meta">用 ❤ 和 HTML / CSS 构建</div>
+  <div class="container">
+    <div class="car-image">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Lamborghini_Veneno_%2819234557404%29.jpg/1280px-Lamborghini_Veneno_%2819234557404%29.jpg" alt="Lamborghini Veneno" />
+    </div>
+    <div class="name-section">
+      <h1>王林</h1>
+      <div class="sub">Lamborghini Veneno</div>
+    </div>
   </div>
+  <div class="meta">Page built with HTML &hearts;</div>
 </body>
 </html>
