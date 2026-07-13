@@ -33,12 +33,29 @@
       max-width: 600px;
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 20px 60px rgba(255, 200, 0, 0.08);
+      background: #111;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 300px;
     }
     .car-image img {
       width: 100%;
       height: auto;
       display: block;
+    }
+    .car-image svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .car-image .hint {
+      display: none;
+      color: #555;
+      font-size: 0.8rem;
+      text-align: center;
+      padding: 1rem;
     }
     .name-section {
       flex: 0 0 auto;
@@ -76,7 +93,44 @@
 <body>
   <div class="container">
     <div class="car-image">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Lamborghini_Veneno_%2819234557404%29.jpg/1280px-Lamborghini_Veneno_%2819234557404%29.jpg" alt="Lamborghini Veneno" />
+      <!-- Real image will show if veneno.jpg exists locally, otherwise SVG fallback -->
+      <img src="veneno.jpg" alt="Lamborghini Veneno" onerror="this.style.display='none';document.getElementById('car-fallback').style.display='block'" />
+      <svg id="car-fallback" style="display:none" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#2a2a2a"/>
+            <stop offset="100%" stop-color="#0d0d0d"/>
+          </linearGradient>
+        </defs>
+        <!-- Body -->
+        <path d="M60,280 Q70,200 130,170 L180,160 L240,130 L320,120 L420,115 L460,100
+                 L520,85 L580,80 L640,90 L680,110 L710,150 L730,190 L740,230
+                 L750,270 L760,280 L760,300 L60,300 Z"
+              fill="url(#bodyGrad)" stroke="#f5c518" stroke-width="2"/>
+        <!-- Windshield -->
+        <path d="M240,132 L260,175 L360,175 L340,125 Z" fill="#1a1a2e" opacity="0.8"/>
+        <!-- Side window -->
+        <path d="M380,127 L410,175 L520,175 L520,95 Z" fill="#1a1a2e" opacity="0.8"/>
+        <!-- Headlight -->
+        <ellipse cx="740" cy="250" rx="18" ry="10" fill="#f5c518" opacity="0.9"/>
+        <ellipse cx="740" cy="250" rx="10" ry="6" fill="#fff" opacity="0.6"/>
+        <!-- Taillight -->
+        <ellipse cx="90" cy="252" rx="12" ry="8" fill="#ff1a1a" opacity="0.8"/>
+        <!-- Wheels -->
+        <circle cx="240" cy="300" r="42" fill="#111" stroke="#333" stroke-width="4"/>
+        <circle cx="240" cy="300" r="28" fill="#222" stroke="#444" stroke-width="2"/>
+        <circle cx="240" cy="300" r="12" fill="#555"/>
+        <circle cx="580" cy="300" r="42" fill="#111" stroke="#333" stroke-width="4"/>
+        <circle cx="580" cy="300" r="28" fill="#222" stroke="#444" stroke-width="2"/>
+        <circle cx="580" cy="300" r="12" fill="#555"/>
+        <!-- Spoiler -->
+        <path d="M520,88 L530,78 L640,78 L650,88 Z" fill="#1a1a1a" stroke="#f5c518" stroke-width="1"/>
+        <!-- Exhaust -->
+        <rect x="65" y="265" width="25" height="8" rx="3" fill="#444"/>
+        <!-- Side intake -->
+        <path d="M440,190 L460,145 L480,145 L460,190 Z" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+      </svg>
+      <div class="hint">正在加载图片...</div>
     </div>
     <div class="name-section">
       <h1>王林</h1>
